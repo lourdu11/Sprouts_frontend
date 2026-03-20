@@ -1,0 +1,225 @@
+.workshops-page {
+  position: relative;
+}
+
+/* Floating Motifs in Hero */
+.ws-float {
+  position: absolute;
+  font-size: 3rem;
+  color: var(--soft-blue);
+  opacity: 0.1;
+  pointer-events: none;
+  z-index: 0;
+  animation: float-slow 10s infinite ease-in-out;
+}
+
+.motif-1 { top: 15%; left: 10%; animation-delay: 0s; }
+.motif-2 { bottom: 20%; right: 15%; animation-delay: -3s; font-size: 4rem; }
+.motif-3 { top: 40%; left: 80%; animation-delay: -6s; }
+
+@keyframes float-slow {
+  0%, 100% { transform: translateY(0) rotate(0deg); }
+  50% { transform: translateY(-20px) rotate(10deg); }
+}
+
+/* Tabs Enhancement */
+.tabs-container {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 50px;
+}
+
+.tabs {
+  display: inline-flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding: 6px;
+  background: var(--bg-secondary);
+  border-radius: var(--radius-full);
+  border: 1px solid var(--border-gray);
+  box-shadow: var(--shadow-sm);
+}
+
+.tab-btn {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 24px;
+  border-radius: var(--radius-full);
+  font-weight: 600;
+  font-size: var(--font-size-sm);
+  transition: all var(--transition-base);
+  border: none;
+  background: transparent;
+  color: var(--subtext);
+}
+
+.tab-btn.active {
+  background: var(--white);
+  color: var(--soft-blue);
+  box-shadow: var(--shadow-md);
+}
+
+.tab-btn:not(.active):hover {
+  color: var(--soft-blue);
+  background: rgba(37, 99, 235, 0.05);
+}
+
+/* Events Grid */
+.events-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 32px;
+}
+
+/* Premium Card Design */
+.premium-ws-card {
+  padding: 0;
+  overflow: hidden;
+  border: 1px solid var(--border-gray);
+  background: var(--bg-card);
+  transition: border-color var(--transition-base), box-shadow var(--transition-base);
+}
+
+.premium-ws-card:hover {
+  border-color: var(--sky-from);
+  box-shadow: 0 15px 40px -10px rgba(37, 99, 235, 0.15);
+}
+
+.event-image {
+  position: relative;
+  height: 220px;
+  background: var(--bg-secondary);
+  overflow: hidden;
+}
+
+.ws-card-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.6s cubic-bezier(0.22, 1, 0.36, 1);
+}
+.event-card:hover .ws-card-img {
+  transform: scale(1.08);
+}
+
+.event-image-overlay {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.ws-icon-large {
+  font-size: 80px;
+  color: var(--soft-blue);
+  filter: drop-shadow(0 4px 12px rgba(37, 99, 235, 0.2));
+  opacity: 0.8;
+}
+
+.event-status-badge {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  z-index: 2;
+  backdrop-filter: blur(8px);
+}
+
+/* Badge Glow for Completed */
+.accent-glow {
+  box-shadow: 0 0 15px rgba(217, 119, 6, 0.3);
+}
+
+.event-body {
+  padding: 30px;
+}
+
+.event-body h3 {
+  font-size: var(--font-size-xl);
+  font-weight: 800;
+  margin-bottom: 12px;
+  letter-spacing: -0.01em;
+  color: var(--text-dark);
+}
+
+.event-desc {
+  color: var(--subtext);
+  font-size: var(--font-size-base);
+  line-height: 1.7;
+  margin-bottom: 24px;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.event-meta {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+  margin-bottom: 30px;
+  padding-top: 20px;
+  border-top: 1px solid var(--light-gray);
+}
+
+.event-meta span {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: var(--font-size-sm);
+  color: var(--text-dark);
+  font-weight: 600;
+}
+
+.event-meta span svg {
+  color: var(--soft-blue);
+  font-size: 1.1rem;
+}
+
+.price-tag {
+  color: #059669 !important;
+}
+
+.event-actions {
+  display: flex;
+  gap: 16px;
+}
+
+/* Empty State */
+.empty-state {
+  text-align: center;
+  padding: 100px 40px;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.empty-state p {
+  font-size: var(--font-size-lg);
+  color: var(--subtext);
+  font-weight: 500;
+}
+
+@media (max-width: 1024px) {
+  .events-grid { grid-template-columns: 1fr; gap: 24px; }
+  .event-body { padding: 24px; }
+}
+
+@media (max-width: 900px) {
+  .ws-float { display: none; }
+}
+
+@media (max-width: 600px) {
+  .event-meta { gap: 12px; }
+  .event-actions { flex-direction: column; }
+  .event-actions .btn { width: 100%; }
+}
+
+@media (max-width: 480px) {
+  .event-body h3 { font-size: 1.25rem; }
+  .event-desc { 
+    -webkit-line-clamp: 3; 
+    line-clamp: 3;
+  }
+}

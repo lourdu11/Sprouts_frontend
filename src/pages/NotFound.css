@@ -1,0 +1,70 @@
+.not-found-page {
+  min-height: 80vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.not-found-content {
+  position: relative;
+  z-index: 10;
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+.not-found-icon {
+  color: var(--soft-blue);
+  margin-bottom: 24px;
+  opacity: 0.5;
+}
+
+.not-found-content h1 {
+  font-size: 120px;
+  font-weight: 900;
+  line-height: 1;
+  margin-bottom: 16px;
+  letter-spacing: -0.05em;
+}
+
+.not-found-content h2 {
+  font-size: var(--font-size-3xl);
+  font-weight: 700;
+  margin-bottom: 16px;
+  color: var(--text-dark);
+}
+
+.not-found-content p {
+  color: var(--subtext);
+  margin-bottom: 32px;
+  line-height: 1.6;
+}
+
+.not-found-actions {
+  display: flex;
+  justify-content: center;
+}
+
+.nf-motif {
+  position: absolute;
+  width: 300px;
+  height: 300px;
+  border-radius: var(--radius-full);
+  filter: blur(100px);
+  opacity: 0.1;
+  z-index: 1;
+}
+
+.nf-motif.motif-1 {
+  top: 10%;
+  left: 10%;
+  background: var(--sky-from);
+}
+
+.nf-motif.motif-2 {
+  bottom: 10%;
+  right: 10%;
+  background: var(--cyan-glow);
+}
